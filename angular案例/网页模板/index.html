@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/index.css" />
+	
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/app/angular-route.min.js"></script>
+	<!--头部-->
+	<script src="js/app/header/headermodule.js"></script>
+	<script src="js/app/header/headercomponent.js"></script>
+	<!--主题-->
+	<script src="js/app/aside/asidemodule.js"></script>
+	<script src="js/app/aside/asidecomponent.js"></script>
+	
+	<!--脚部-->
+	<script src="js/app/footer/footermodule.js"></script>
+	<script src="js/app/footer/footercomponent.js"></script>
+	
+	<script src="js/app/app.js"></script>
+	<script src="js/app/config.js"></script>
+</head>
+<body>
+	<!--头部-->
+	<header>
+		<header-component></header-component>
+	</header>
+	<div class="container">
+		<aside class="aside">
+			<aside-component></aside-component>
+		</aside>	
+		<section class="content-box">
+			<section class="content">
+				<div ng-view></div>
+			</section>
+		</section>
+		<div style="clear:both;"></div>
+	</div>
+	<!--脚部-->
+	<footer>
+		<footer-component></footer-component>
+	</footer>
+</body>
+</html>

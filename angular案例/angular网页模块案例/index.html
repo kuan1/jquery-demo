@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>系统首页</title>
+    <link rel="stylesheet" href="css/commons.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/pageheader.css">
+    <link rel="stylesheet" href="css/pageaside.css">
+    <link rel="stylesheet" href="css/pagefooter.css">
+    <link rel="stylesheet" href="js/lib/bootstrap/bootstrap.min.css">
+
+    <script src="js/lib/angular/angular.min.js"></script>
+    <script src="js/lib/angular/angular-route.min.js"></script>
+
+    <script src="js/app/modules/pageheader/pageheader.module.js"></script>
+    <script src="js/app/modules/pageheader/pageheader.component.js"></script>
+
+    <script src="js/app/modules/pageaside/pageaside.module.js"></script>
+    <script src="js/app/modules/pageaside/pageaside.component.js"></script>
+
+    <script src="js/app/modules/pagefooter/pagefooter.module.js"></script>
+    <script src="js/app/modules/pagefooter/pagefooter.component.js"></script>
+
+    <script src="js/app/app.index.module.js"></script>
+    <script src="js/app/app.index.config.js"></script>
+    <script>
+        /**
+         * 通常情况，项目开发时，根据需求进行页面的构建
+         *      普通简单页面直接构建布局
+         *      复杂的多页面，可以通过框架进行构建
+         *
+         * 构建项目文件结构及页面时，需要注意如下问题：
+         *      1. 路径中尽量不要出现中文、空格
+         *      2. 新项目开发，引用到的第三方文件，尽量使用官方下载的。
+         *      3. 模块化开发~模块名称、组件名称、控制器名称见名知意
+         */
+    </script>
+</head>
+<body>
+    <header>
+        <!-- 页头组件 -->
+        <header-component></header-component>
+    </header>
+    <section class="pagebody">
+        <aside>
+            <!-- 侧边栏组件 -->
+            <aside-component></aside-component>
+        </aside>
+        <section class="content">
+            <!-- 内容部分 -->
+            <div ng-view></div>
+        </section>
+        <div style="clear:both;"></div>
+    </section>
+    <footer>
+        <!-- 页脚组件 -->
+        <footer-component></footer-component>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/**
+ * Created by MuMu on 2017/2/8.
+ */
+angular.module("myApp")
+    .config(["$routeProvider", function($rp) {
+        $rp.when(
+            "/a",
+            {
+                templateUrl:"a.html"
+            }
+        ).when(
+            "/b",
+            {
+                templateUrl:"b.html"
+            }
+        ).when(
+            "/c",
+            {
+                templateUrl:"c.html"
+            }
+        ).when(
+            "/d",
+            {
+                templateUrl:"d.html"
+            }
+        ).when(
+            "/e",
+            {
+                templateUrl:"e.html"
+            }
+        ).otherwise(
+            "/a"
+        );
+    }]);

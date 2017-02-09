@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        #container{margin:100px auto;padding:50px;background:#ccc;width:700px;}
+        #screen{width:700px;height:400px;background:#fff;margin-bottom:50px;position:relative;overflow:hidden;}
+        input{width:400px;height:30px;}
+        button{width:100px;height:30px;}
+        .msg{position:absolute;left:800px;top:0;line-height:30px;width:400px;}
+    </style>
+    <script src="js/lib/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $("#send").click(function(){
+                //获取输入框中的数据
+                var $value = $("#msg").val();
+                //创建标签，增加到screen中
+                var $p = $("<p>");
+                $p.addClass("msg");
+                $p.text($value);
+                //随机高度
+                var _top = Math.floor(Math.random() * ($("#screen").innerHeight() - 30));
+                //随机颜色
+                var _rgb = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," +　Math.floor(Math.random() * 255) + ")";
+                console.log(_rgb);
+                //随机字体大小
+                var _size = 18 + Math.ceil(Math.random() * 10);
+
+                $p.css({
+                    "top":_top,
+                    "color":_rgb,
+                    "font-size":_size
+                });
+                $("#screen").append($p);
+
+
+                //添加动画效果
+                var _time = Math.ceil(Math.random() * 5000) + 7000;
+                $p.animate({"left":-200},_time,function(){
+                    $(this).remove();
+                })
+
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="screen"></div>
+    <input id="msg" type="text"/>
+    <button id="send">发送</button>
+</div>
+</body>
+</html>

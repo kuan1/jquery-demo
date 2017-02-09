@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.box{width:200px;padding:20px;border:1px solid #ccc;box-shadow:2px 2px 5px 0 #ccc;margin:0 auto;}
+	</style>
+	
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+<script>
+	//全选框
+	//设置全选和全不选
+	$(function(){
+		$("input").prop("checked")
+		console.log($("input"))
+	})
+	
+	$(function() {
+		$(".all").click(function() {
+			if(this.checked) {
+				$(".all").prop("checked", true);
+				$(".check").prop("checked", true);
+			} else {
+				$(".check").removeAttr("checked");
+				$(".all").removeAttr("checked")
+			}
+		});
+		//全选和全不选自动选中
+		var m; //记录复选框选中状态
+		$(".check").click(function() {
+			//判断复选框所有复选框的选中状态
+			m = 0;//
+			$(".check").each(function() {
+				if($(this).prop('checked')) {
+					m++;
+				}
+			});
+			if(m == $(".check").length) {
+				$(".all").prop("checked", true);
+				$(".check").prop("checked", true);
+			}
+			if(m < $(".check").length) {
+				$(".all").removeAttr("checked")
+			}
+		})
+	});
+</script>
+<body>
+	<div class="box">
+		<input type="checkbox" class="all" />全选 <br /><br />
+		<input type="checkbox" class="check" />单选 <br />
+		<input type="checkbox" class="check" />单选 <br />
+		<input type="checkbox" class="check" />单选 <br /><br />
+		<input type="checkbox" class="all" />全选 <br />
+	</div>	
+</body>
+</html>
